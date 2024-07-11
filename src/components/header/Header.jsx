@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { increment } from '@/lib/features/counter/CounterSlice'
+import { decrement, increment } from '@/lib/features/counter/CounterSlice'
 import Link from 'next/link'
 
 const Header = () => {
@@ -13,7 +13,8 @@ const Header = () => {
             <h1>Header {count} </h1>
             <Link href={"/"}>Home</Link>
             <Link href={"/product"}>Product</Link>
-            <button onClick={() => dispatch(increment())}>Inc</button>
+            <button className='cursor-pointer' onClick={() => dispatch(increment())}>Inc</button>
+            <button className={`cursor-pointer ${count <= 0 ? 'text-gray-300' : 'text-black'}`} disabled={count <= 0} onClick={() => dispatch(decrement())}>dec</button>
         </header>
     )
 }

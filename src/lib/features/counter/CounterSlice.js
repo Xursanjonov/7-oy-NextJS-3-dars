@@ -14,6 +14,7 @@ export const counterSlice = createSlice({
     },
     decrement: (state) => {
       state.value -= 1;
+      localStorage.setItem("counter", String(state.value));
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload;
