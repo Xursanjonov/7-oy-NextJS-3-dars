@@ -13,6 +13,7 @@ const Header = () => {
             <h1>Header {count} </h1>
             <Link href={"/"}>Home</Link>
             <Link href={"/product"}>Product</Link>
+            <Link href={"/wish-list"}>Wish List</Link>
             <button className='cursor-pointer' onClick={() => dispatch(increment())}>Inc</button>
             <button className={`cursor-pointer ${count <= 0 ? 'text-gray-300' : 'text-black'}`} disabled={count <= 0} onClick={() => dispatch(decrement())}>dec</button>
         </header>
