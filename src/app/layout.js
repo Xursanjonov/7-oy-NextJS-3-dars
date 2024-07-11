@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
+import DefaultCounter from "@/components/default-values/DefaultCounter";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,7 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <DefaultCounter />
+          <main>{children}</main>
+        </StoreProvider>
       </body>
     </html>
   );
