@@ -1,20 +1,18 @@
 "use client"
-import { addToLike } from '@/lib/features/wishlist/wishlistSlice'
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Image from 'next/image'
+import Link from 'next/link'
+import { addToLike } from '@/lib/features/wishlist/wishlistSlice'
 
 const WishList = () => {
     const wishList = useSelector(state => state.wishlist?.value)
     const dispatch = useDispatch()
 
     return (
-        <div className='wish-list'>
+        <div className='wish-list mxa-w-[1520px] mx-auto my-6'>
             <h1>Wish List</h1>
-            <div className="gr
-            
-            id grid-cols-4 gap-6 items-center justify-center">
+            <div className="mxa-w-[1480px] mx-auto grid grid-cols-4 gap-6 items-center justify-center">
                 {
                     wishList?.map(el => (
                         <div className='p-3 shadow-sm border-2 rounded-md' key={el?.id}>
